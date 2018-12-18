@@ -22,7 +22,7 @@ ext {
             gradle    : '3.0.1'
     ]
 
-    dependenciesList = [
+    mapboxGesturesAndroidDependencies = [
 
             // mapbox
             mapboxSdk          : "com.mapbox.mapboxsdk:mapbox-android-sdk:${version.mapboxSdkVersion}",

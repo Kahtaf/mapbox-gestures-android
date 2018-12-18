@@ -33,18 +33,18 @@ android {
 }
 
 dependencies {
-    implementation dependenciesList.supportAppcompatV7
-    implementation dependenciesList.timber
-    implementation(dependenciesList.mapboxSdk) {
+    implementation mapboxGesturesAndroidDependencies.supportAppcompatV7
+    implementation mapboxGesturesAndroidDependencies.timber
+    implementation(mapboxGesturesAndroidDependencies.mapboxSdk) {
         exclude group: 'com.mapbox.mapboxsdk', module: 'mapbox-android-gestures'
     }
 
-    testImplementation dependenciesList.junit
-    testImplementation dependenciesList.mockito
-    testImplementation dependenciesList.robolectric
-    androidTestImplementation dependenciesList.mockitoAndroid
-    androidTestImplementation dependenciesList.testRunner
-    androidTestImplementation dependenciesList.testEspressoCore
+    testImplementation mapboxGesturesAndroidDependencies.junit
+    testImplementation mapboxGesturesAndroidDependencies.mockito
+    testImplementation mapboxGesturesAndroidDependencies.robolectric
+    androidTestImplementation mapboxGesturesAndroidDependencies.mockitoAndroid
+    androidTestImplementation mapboxGesturesAndroidDependencies.testRunner
+    androidTestImplementation mapboxGesturesAndroidDependencies.testEspressoCore
 
     implementation project(":library")
 }

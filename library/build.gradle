@@ -1,5 +1,9 @@
 apply plugin: 'com.android.library'
 
+buildscript {
+    apply from: "../gradle/dependencies.gradle"
+}
+
 android {
     compileSdkVersion androidVersions.compileSdkVersion
     buildToolsVersion androidVersions.buildToolsVersion
@@ -33,17 +37,17 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation dependenciesList.timber
+    implementation mapboxGesturesAndroidDependencies.timber
 
-    implementation dependenciesList.supportCompat
-    testImplementation dependenciesList.junit
-    testImplementation dependenciesList.mockito
-    testImplementation dependenciesList.robolectric
-    androidTestImplementation dependenciesList.mockitoAndroid
-    androidTestImplementation dependenciesList.testRunner
-    androidTestImplementation dependenciesList.testEspressoCore
+    implementation mapboxGesturesAndroidDependencies.supportCompat
+    testImplementation mapboxGesturesAndroidDependencies.junit
+    testImplementation mapboxGesturesAndroidDependencies.mockito
+    testImplementation mapboxGesturesAndroidDependencies.robolectric
+    androidTestImplementation mapboxGesturesAndroidDependencies.mockitoAndroid
+    androidTestImplementation mapboxGesturesAndroidDependencies.testRunner
+    androidTestImplementation mapboxGesturesAndroidDependencies.testEspressoCore
 }
 
 apply from: 'javadoc.gradle'
-apply from: "${rootDir}/gradle/mvn-push-android.gradle"
-apply from: "${rootDir}/gradle/checkstyle.gradle"
+apply from: "../gradle/mvn-push-android.gradle"
+apply from: "../gradle/checkstyle.gradle"
